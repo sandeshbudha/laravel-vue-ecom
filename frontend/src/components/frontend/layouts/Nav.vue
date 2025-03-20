@@ -1,7 +1,12 @@
-<script xmlns="http://www.w3.org/1999/html">
-export default {
-    name: "Nav"
-}
+<script setup>
+import store from '@/store'
+import {toast} from "vue3-toastify";
+
+const logout = (()=>{
+    store.state.user = [];
+    sessionStorage.removeItem('TOKEN')
+    toast.success('you have been logged out successfully')
+})
 </script>
 
 <template>
@@ -50,8 +55,8 @@ export default {
                     <a href="#" class="text-gray-200 hover:text-white transition">About us</a>
                     <a href="#" class="text-gray-200 hover:text-white transition">Contact us</a>
                 </div>
-                <router-link :to="{name:'userLogin'}" class="text-gray-200 hover:text-white transition">Login</router-link>
-                <button  class="text-gray-200 hover:text-white transition">Logout</button>
+                <router-link v-if="!store.state.user.token" :to="{name:'userLogin'}" class="text-gray-200 hover:text-white transition">Login</router-link>
+                <button @click="logout" v-if="store.state.user.token"  class="text-gray-200 hover:text-white transition">Logout</button>
             </div>
         </div>
     </nav>

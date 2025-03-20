@@ -27,12 +27,12 @@ class AuthController extends Controller
 
         /** @var \App\Models\User $user */
         $user = Auth::user();
-        if (!$user->is_admin) {
-            Auth::logout();
-            return response([
-                'message' => 'You don\'t have permission to authenticate as admin'
-            ], 403);
-        }
+//        if (!$user->is_admin) {
+//            Auth::logout();
+//            return response([
+//                'message' => 'You don\'t have permission to authenticate as admin'
+//            ], 403);
+//        }
         if (!$user->email_verified_at) {
             Auth::logout();
             return response([
