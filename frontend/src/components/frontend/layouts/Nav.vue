@@ -1,4 +1,4 @@
-<script>
+<script xmlns="http://www.w3.org/1999/html">
 export default {
     name: "Nav"
 }
@@ -51,6 +51,7 @@ export default {
                     <a href="#" class="text-gray-200 hover:text-white transition">Contact us</a>
                 </div>
                 <router-link :to="{name:'userLogin'}" class="text-gray-200 hover:text-white transition">Login</router-link>
+                <button  class="text-gray-200 hover:text-white transition">Logout</button>
             </div>
         </div>
     </nav>
