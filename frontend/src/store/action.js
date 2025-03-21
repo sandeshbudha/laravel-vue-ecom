@@ -110,3 +110,9 @@ export function registerUser({commit},formData){
         return data
     })
 }
+
+export function orderProduct({commit},orderDetails){
+    return axiosClient.post('order',orderDetails).then(({data})=>{
+        return data
+    })
+}

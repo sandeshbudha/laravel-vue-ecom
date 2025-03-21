@@ -11,6 +11,7 @@ import Home from "@/components/frontend/Home.vue"
 import CartList from "@/components/frontend/CartList.vue";
 import Register from "@/components/frontend/auth/Register.vue";
 import UserLogin from "@/components/frontend/auth/UserLogin.vue";
+import Checkout from "@/components/frontend/Checkout.vue";
 
 const routes = [
 
@@ -49,6 +50,12 @@ const routes = [
         path:"/user-register",
         name:"userRegister",
         component:Register,
+    },
+
+    {
+        path:"/checkout",
+        name:"checkout",
+        component:Checkout,
     },
 
 

@@ -6,6 +6,7 @@ import {ref} from "vue";
 import CryptoJS from "crypto-js";
 import { v4 as uuidv4 } from 'uuid';
 import state from "@/store/state.js";
+import router from "@/router/index.js";
 
 let  totalCart = ref(store.state.cart.length)
 
@@ -26,7 +27,7 @@ const removeCart = (()=>{
 const proceedOrder = (()=>{
 
     if(state.user.token){
-
+        router.push({name:'checkout'})
     }else {
         toast.error("proceed to login first ")
     }
